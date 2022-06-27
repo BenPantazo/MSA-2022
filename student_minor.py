@@ -57,5 +57,32 @@ elif user_option == "2":
             print("ERROR: Incorrect Username or Password length")
             continue
 student_names = []
-scores = []
-letter_grade = []
+student_scores = []
+student_letter_grade = []
+
+number_of_students = int(input("Enter number of students to enter grades for: "))
+
+for counter in range(number_of_students):
+    student_name = input("Enter Student name: ")
+    student_score = float(input("Enter student score: "))
+    student_names.append(student_name)
+    student_scores.append(student_score)
+    if student_score >= 90 and student_score <= 100:
+        student_letter_grade.append("A")
+    elif student_score >= 80 and student_score <= 89:
+        student_letter_grade.append("B")
+    elif student_score >= 70 and student_score <= 79:
+        student_letter_grade.append("C")
+    elif student_score >= 60 and student_score <= 69:
+        student_letter_grade.append("D")
+    else:
+        student_letter_grade.append("F")
+
+
+for index in range(len(student_names)):
+    print(f"{student_names[index]} : {student_scores[index]} : {student_letter_grade[index]} ")
+
+
+
+
+
